@@ -1,0 +1,33 @@
+.note {
+    word-wrap: break-word
+}
+.comments {
+    border-top: 3px solid #666;
+}
+.comments__head {
+    font-size: 16px;
+    line-height: 18px;
+    color: #666;
+    text-transform: uppercase;
+    border-bottom: 3px solid #666;
+}
+.comments-item {
+    list-style-type: none;
+    padding: 4px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 14px;
+
+}
+.comment-ite__author {
+    font-size: 14px;
+    font-weight: 700;
+}
+.comment-item__text {
+    margin-top:2px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.comments-item__date {
+    font-size: 12px;
+    font-weight: 300;
+}
