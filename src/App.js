@@ -54,7 +54,6 @@ export default class App extends Component {
         }),
       };
     });
-    console.log(commentId);
   };
 
   handleUpdateNote = (id, name, content) => {
