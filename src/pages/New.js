@@ -30,7 +30,7 @@ class New extends Component {
 
     return (
       <div>
-        <h2>New Note</h2>
+        <h2 className="mt-3">New Note</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">

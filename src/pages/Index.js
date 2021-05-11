@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+
+
 export default class Index extends Component {
   render() {
-    const { onDeleteNote } = this.props;
+    const { onDeleteNote} = this.props;
 
     return (
-      <ul className="list-group mt-3">
+      <ul className="list-group mt-2">
         {this.props.notes.map((note) => {
           return (
-            <li key={note.id} className="list-group-item"  style={{"wordWrap": 'break-word'}}>
+            <li key={note.id} className='list-group-item' style={{"wordWrap": 'break-word'}}>
               <Link to={`/${note.id}`}>{note.name}</Link>
               <button
                 type="button"

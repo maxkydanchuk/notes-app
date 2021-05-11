@@ -5,6 +5,7 @@ import New from "./pages/New";
 import View from "./pages/View";
 import Edit from "./pages/Edit";
 import Navbar from "./components/Navbar";
+import SearchPanel from "./components/SearchPanel";
 
 import "./App.css";
 
@@ -14,6 +15,7 @@ let commentId = 0;
 export default class App extends Component {
   state = {
     notes: [],
+    term: "",
   };
 
   handleCreateNote = (name, content) => {
@@ -100,7 +102,24 @@ export default class App extends Component {
     });
   };
 
+  onSearchChange = (term) => {
+    this.setState({ term });
+    console.log(term);
+  };
+
+  search(items, term) {
+    if (term.length === 0) {
+      return items;
+    }
+
+    return items.filter((item) => {
+      return item.name.toLowerCase().indexOf(term.toLowerCase()) > -1;
+    });
+  }
+
   render() {
+    const visibleNotes = this.search(this.state.notes, this.state.term);
+
     return (
       <Router>
         <div className="app">
@@ -123,8 +142,9 @@ export default class App extends Component {
               />
             </Route>
             <Route path="/">
+              <SearchPanel onSearchChange={this.onSearchChange} />
               <Index
-                notes={this.state.notes}
+                notes={visibleNotes}
                 onDeleteNote={this.handleDeleteNote}
               />
             </Route>
